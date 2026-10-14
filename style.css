@@ -54,8 +54,10 @@ body {
 
 .banner img { /** suurus vaja üle vaadata **/
     width: 100%;
-    height: auto;
-    display: block;
+    height: calc(100vh - 500px);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 header nav {
