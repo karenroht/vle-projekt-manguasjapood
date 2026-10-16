@@ -146,6 +146,38 @@ nav ul li a img {
     pointer-events: auto;
 }
 
+.tooted-ribamenyy {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    padding: 10px 0;
+}
+
+.ribamenyy-vasak,
+.ribamenyy-parem {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.tooted-ribamenyy a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
+    color: inherit;
+    font-weight: 500;
+}
+
+.tooted-ribamenyy img {
+    width: 14px;
+    height: auto;
+}
+
 
 footer {
     margin-top: 20px;
