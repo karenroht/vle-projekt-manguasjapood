@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="et">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mänguasjapood</title>
+
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <header>
+        <div class="topbar">
+            <a href="index.html" class="logo">
+                <img src="img/rocking-horse-svgrepo-com.svg" alt="Mänguasjapood">
+            </a>
+
+            <div class="search">
+                <span>Otsing</span>
+                <img src="img/search.svg" alt="">
+            </div>
+
+            <button class="icon-btn cart-btn" aria-label="Ostukorv">
+                <img src="img/shopping-cart.svg" alt="">
+            </button>
+
+            <button class="icon-btn menu-btn" aria-label="Menüü">
+                <img src="img/menu.svg" alt="">
+            </button>
+        </div>
+
+        <nav>
+            <ul>
+                <li>
+                    <a href="#">Beebitooted <img src="img/chevron-down.svg" alt=""></a>
+                </li>
+                <li>
+                    <a href="#">Uued tooted <img src="img/chevron-down.svg" alt=""></a>
+                </li>
+                <li><a href="tooted.html">Kõik tooted</a></li>
+
+                <li><a href="kink.html">Kingiabi</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="kingid">
+
+            <h2>Aitame leida sobiva kingi</h2>
+
+            <div class="valik">
+                <h3><img src="img/1-circle.svg" alt="1">Vali lapse vanus</h3> <!-- tee nii, et pilt kohe enne teksti oleks -->
+
+                <ul class="valik_nupud">
+                    <li><button>0-3 aastat</button></li>
+                    <li><button>4-6 aastat</button></li>
+                    <li><button>7-13 aastat</button></li>
+                    <li><button>13+ aastat</button></li>
+                </ul>
+
+            </div>
+            
+            <div class="valik">
+                <h3><img src="img/2-circle.svg" alt="2">Vali lapse huvid</h3>
+
+                <ul class="valik_nupud">
+                    <li><button>Pusled</button></li>
+                    <li><button>Autod</button></li>
+                    <li><button>Nukud</button></li>
+                    <li><button>Kunst ja käsitöö</button></li>
+                    <li><button>Pehmed mänguasjad</button></li>
+                    <li><button>Legod</button></li>
+                </ul>
+
+            </div>
+            
+            <div class="valik">
+                <h3><img src="img/3-circle.svg" alt="3">Vali eelarve</h3>
+
+                <ul class="valik_nupud">
+                    <li><button>kuni 15€</button></li>
+                    <li><button>15-30€</button></li>
+                    <li><button>30-50€</button></li>
+                    <li><button>50€+</button></li>
+                </ul>
+
+            </div>
+
+            <div class="soovitus">
+                <button>Näita soovitusi<img src="img/arrow-right.svg"></button>
+            </div>
+
+            <div class="loading" id="loading" aria-live="polite" aria-hidden="true">
+                <div class="spinner"></div>
+                <p>Otsime sobivaid kingitusi...</p>
+            </div>
+
+        </section>
+
+        <hr>
+
+        <section class="uuedtooted">
+
+            <div class="tooted">
+
+                <article class="toode">
+                    <img src="img/karu.png" alt="kaisukaru">
+                    <h3>Pehme kaisukaru</h3>
+                    <p class="hind">19.99€</p>
+                </article>
+
+                <article class="toode">
+                    <img src="img/pusle.avif" alt=""pusle>
+                    <h3>Intrigeeriv pusle</h3>
+                    <p class="hind">24.99€</p>
+                </article>
+
+                <div class="nooled">
+                    <img src="img/chevrons-left.svg" alt="">
+                    <img src="img/chevrons-right.svg" alt="">
+                </div>
+
+                <article class="toode">
+                    <img src="img/autod.jpg" alt="autod">
+                    <h3>Mänguautode komplekt</h3>
+                    <p class="hind">12.99€</p>
+                </article>
+                <article class="toode">
+                    <img src="img/nukumaja.avif" alt="nukumaja">
+                    <h3>Suur nukumängumaja</h3>
+                    <p class="hind">49.99€</p>
+                </article>
+            </div>
+        </section>
+
+
+    </main>
+
+    <footer>
+
+    </footer>
+
+     <script>
+        document.querySelectorAll(".valik_nupud button").forEach((button) => {
+            
+            button.addEventListener("click", () => {
+                const isSelected = button.classList.toggle("selected");
+                button.setAttribute("aria-pressed", isSelected);
+            });
+        });
+
+        const soovitusBtn = document.querySelector(".soovitus button");
+        const loading = document.getElementById("loading");
+
+        soovitusBtn.addEventListener("click", () => {
+            loading.classList.add("show");
+            loading.setAttribute("aria-hidden", "false");
+            soovitusBtn.disabled = true;
+
+            setTimeout(() => {
+                window.location.href = "tooted.html";
+            }, 2000);
+        });
+    </script>
+
+</body>
+
+</html>
