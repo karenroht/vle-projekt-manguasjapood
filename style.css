@@ -93,16 +93,117 @@ nav ul li a img {
     height: 16px;
 }
 
-
-.uuedtooted {
+.uuedtooted, .kingid{
     margin: 0 16px;
 }
 
-.uuedtooted h2 {
+.uuedtooted,.kingid h2 {
     margin-top: 24px;
     margin-bottom: 24px;
     font-size: 24px;
     font-weight: 500;
+}
+
+.valik h3 { 
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 24px;
+    margin-bottom: 24px;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.valik h3 img { 
+    width: 1em;
+    height: 1em;
+    flex-shrink: 0;
+}
+
+
+.valik_nupud { 
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    gap: 12px;
+}
+
+.valik_nupud button{ 
+    border-radius: 2px;
+    border: white;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+
+    padding: 6px 5px 6px 5px;
+    white-space: nowrap;
+
+    font-size: 16px;
+    
+    cursor: pointer;
+    transition: background-color 0.15s;
+}
+
+.valik_nupud button.selected {
+    background-color: #ffbd06;
+}
+
+.soovitus { 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20px;
+}
+.soovitus button { 
+    display: flex;
+    border: #FFBD06;
+    background-color: #FFBD06;
+    padding: 10px 40px 10px 40px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    text-align: center;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.15s;
+}
+
+.soovitus button:active {
+    background-color: #ffce7a;
+}
+
+.soovitus img { 
+    padding: 0px 0px 0px 10px;
+    height: 20px;
+}
+
+.loading {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    background: #fff0b5;
+    font-size: 18px;
+}
+
+.loading.show {
+    display: flex;
+}
+
+.spinner {
+    width: 56px;
+    height: 56px;
+    border: 6px solid white;
+    border-top-color: #ffbd06;
+    border-radius: 50%;
+    animation: spin 0.9s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
 }
 
 .tooted {
@@ -230,5 +331,31 @@ footer {
     .logo img {
         width: auto;
         height: 64px;
+    }
+
+    .kingid h2 {
+        font-size: 32px;
+    }
+
+    .valik h3 {
+        font-size: 26px;   
+    }
+
+    .valik_nupud {
+        gap: 16px;
+    }
+
+    .valik_nupud button {
+        font-size: 20px;
+        padding: 10px 16px;
+    }
+
+    .soovitus button {
+        font-size: 24px;
+        padding: 14px 56px;
+    }
+
+    .soovitus img {
+        height: 24px;
     }
 }
